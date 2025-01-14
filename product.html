@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products DEMO</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff3e0;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .nav h1 {
+        color: #a294f9;
+        font-size: 1.5rem;
+      }
+
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #a294f9;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.2s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-image-container {
+        position: relative;
+        padding-bottom: 100%; /* Creates a square aspect ratio */
+        overflow: hidden;
+      }
+
+      .product-card img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 1rem;
+      }
+
+      .product-card h3 {
+        padding: 1rem;
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+        background: white;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .products-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .nav h1 {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav h1 {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          flex-direction: column;
+          padding: 1rem;
+          gap: 1rem;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 1rem;
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <img
+            src="/images/logo.jpg"
+            alt="NIXIES Pharmaceuticals"
+            class="logo"
+          />
+          <h1>NIXIES PHARMACEUTICALS PVT LTD</h1>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="product.html">PRODUCTS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="products-grid">
+        <!-- Example of one product card structure -->
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/MV_Syrup.png" alt="MV_Syrup" />
+          </div>
+          <h3>MV_Syrup</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/MV_Capsules.png" alt="MV_Capsules" />
+          </div>
+          <h3>MV_Capsules</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Drops/MV_Drops.png" alt="MV_Drop">
+          </div>
+          <h3>MV_Drops</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Injections/MV_Injection.png" alt="MV_Injection">
+          </div>
+          <h3>MV_Injection</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Alkanix.png" alt="Alkanix">
+          </div>
+          <h3>Alkanix</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Altaliv-CF.png" alt="Altaliv-CF">
+          </div>
+          <h3>Altaliv-CF</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Anix-LS-junior.png" alt="Anix-LS-junior">
+          </div>
+          <h3>Anix-LS (junior)</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Anix-LS.png" alt="Anix-LS">
+          </div>
+          <h3>Anix-LS</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Montix-L.png" alt="Montix-L-Syrup">
+          </div>
+          <h3>Montix-L</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Nixclav-DS.png" alt="Nixclav-DS">
+          </div>
+          <h3>Nixclav-DS</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/NIxpod.png" alt="NIxpod">
+          </div>
+          <h3>NIxpod</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Paracetamol.png" alt="Paracetamol">
+          </div>
+          <h3>Paracetamol</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Polycold-AF.png" alt="Polycold-AF">
+          </div>
+          <h3>Polycold-AF</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Polycold.png" alt="Polycold">
+          </div>
+          <h3>Polycold</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Ulcinix-o.png" alt="Ulcinix-o">
+          </div>
+          <h3>Ulcinix-o</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Syrups/Xturn.png" alt="Xturn">
+          </div>
+          <h3>Xturn</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Care-200.png" alt="Care-200">
+          </div>
+          <h3>Care-200</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Iten-200.png" alt="Iten-200">
+          </div>
+          <h3>Iten-200</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Montix-L.png" alt="Montix-L">
+          </div>
+          <h3>Montix-L</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Montix-LKid.png" alt="Montix-LKid">
+          </div>
+          <h3>Montix-L(Kid)</h3>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Nixclav-625.png" alt="Nixclav-625">
+          </div>
+          <h3>Nixclav-625</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Nixpod-CV.png" alt="Nixpod-CV">
+          </div>
+          <h3>Nixpod-CV</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Nixpod.png" alt="Nixpod">
+          </div>
+          <h3>Nixpod</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Rabnix-DSR.png" alt="Rabnix-DSR">
+          </div>
+          <h3>Rabnix-DSR</h3>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Rabnix-LS.png" alt="Rabnix-LS">
+          </div>
+          <h3>Rabnix-LS</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Seranix-15.png" alt="Seranix-15">
+          </div>
+          <h3>Seranix-15</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Seranix-D.png" alt="Seranix-D">
+          </div>
+          <h3>Seranix-D</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Vertix-16.png" alt="Vertix-16">
+          </div>
+          <h3>Vertix-16</h3>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Vertix-8.png" alt="Vertix-8">
+          </div>
+          <h3>Vertix-8</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/XIM-O.png" alt="XIM-O">
+          </div>
+          <h3>XIM-O</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/Xturn.png" alt="Xturn">
+          </div>
+          <h3>Xturn</h3>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Tablets/YesBone.png" alt="YesBone">
+          </div>
+          <h3>YesBone</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Drops/N-Quin.png" alt="N-Quin">
+          </div>
+          <h3>N-Quin</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Drops/Polycold-AF.png" alt="Polycold-AF">
+          </div>
+          <h3>Polycold-AF</h3>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Others/Anixpro-SF.png" alt="Anixpro-SF">
+          </div>
+          <h3>Anixpro-SF</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Others/Anixpro.png" alt="Anixpro">
+          </div>
+          <h3>Anixpro</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Others/Dexo-z.png" alt="Dexo-z">
+          </div>
+          <h3>Dexo-z</h3>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="/images/Others/OMZ.png" alt="OMZ">
+          </div>
+          <h3>OMZ</h3>
+        </div>
+        <!-- Repeat this structure for all products -->
+        <!-- Copy the product-card div for each product -->
+      </div>
+    </main>
+
+    <script>
+      // Mobile menu toggle functionality
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

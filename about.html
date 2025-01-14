@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NIXIES PHARMACEUTICALS PVT LTD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff3e0;
+        }
+
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #A294F9;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #A294F9;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        .about-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .about-section h2 {
+            color: #A294F9;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .mission-vision {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .mission, .vision {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .mission h3, .vision h3 {
+            color: #A294F9;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .mission-vision {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <img src="/images/logo.jpg" alt="NIXIES Pharmaceuticals Logo">
+                    <h1>NIXIES PHARMACEUTICALS PVT LTD</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="about-section">
+                <h2>About NIXIES Pharmaceuticals</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>NIXIES Pharmaceuticals Pvt Ltd is a leading pharmaceutical company dedicated to improving global health through innovative and high-quality medicines. Founded in 2005, we have grown to become a trusted name in the pharmaceutical industry, serving patients and healthcare providers across the world.</p>
+                        <p>Our commitment to excellence in research, development, and manufacturing has allowed us to create a diverse portfolio of products that address a wide range of medical needs. From life-saving drugs to everyday health solutions, we strive to make a positive impact on people's lives.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="/images/about-us.jpg" alt="NIXIES Pharmaceuticals facility">
+                    </div>
+                </div>
+            </section>
+
+            <div class="mission-vision">
+                <section class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To enhance global health by developing and delivering innovative, high-quality pharmaceutical products that improve people's lives while maintaining the highest standards of ethics and integrity.</p>
+                </section>
+                <section class="vision">
+                    <h3>Our Vision</h3>
+                    <p>To be a global leader in pharmaceuticals, recognized for our commitment to innovation, quality, and patient care, while contributing to a healthier world for future generations.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
