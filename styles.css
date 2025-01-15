@@ -65,7 +65,7 @@ body {
     position: relative;
     height: 650px;
     color: white;
-    background: url('/images/clg.png') center/cover;
+    background: url('./images/clg.png') center/cover;
 }
 
 .hero-content {
